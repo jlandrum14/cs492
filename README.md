@@ -5,9 +5,8 @@ The school board has proposed the development of a computerized system to improv
 
 ## SMS-000	Epic: System Framework
 ### S0.1	Set Up Development Environment
-1. Install Programming Language
-1. Install Development Tools
-1. Set Up Local Server
+1. ~~Install Programming Language~~
+1. ~~Install Development Tools~~
 1. Create Project Structure
 1. Document Setup Process
 ### S0.2	Configure Version Control System
