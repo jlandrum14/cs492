@@ -11,16 +11,16 @@ The school board has proposed the development of a computerized system to improv
 1. Create Project Structure
 1. Document Setup Process
 ### S0.2	Configure Version Control System
-1. Choose Version Control System
-1. Initialize Repository
-1. Create Initial Commit
+1. ~~Choose Version Control System~~
+1. ~~Initialize Repository~~
+1. ~~Create Initial Commit~~
 1. Configure Branching Strategy
-### S0.3	Create Initial Database Schema
-1. Define Database Requirements
-1. Choose Database Management System
-1. Design Database Schema
-1. Implement Database Schema
-1. Document Database Schema
+### ~~S0.3	Create Initial Database Schema~~
+1. ~~Define Database Requirements~~
+1. ~~Choose Database Management System~~
+1. ~~Design Database Schema~~
+1. ~~Implement Database Schema~~
+1. ~~Document Database Schema~~
 ## SMS-001	Epic: Student Information Management
 ### S1.1	Input and update student information.
 1. Design input forms for student fields.
