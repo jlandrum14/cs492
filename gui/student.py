@@ -1,6 +1,7 @@
 import tkinter as tk
+from tkinter import messagebox
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 import pandas as pd
 
 # Database configuration
@@ -18,13 +19,28 @@ class StudentManagement:
         """
         Adds a new student to the database.
         """
-        session = Session()
-        session.execute(
-            f"INSERT INTO students (first_name, last_name, date_of_birth) VALUES ('{first_name}', '{last_name}', '{dob}')"
-        )
-        session.commit()
-        session.close()
-        self.display_students()
+        # Validate input fields
+        if not first_name or not last_name or not dob:
+            messagebox.showerror("Input Error", "All fields are required!")
+            return
+
+        try:
+            # Connect to the database
+            session = Session()
+
+            # Use text() to explicitly declare the SQL query
+            insert_query = text(
+                "INSERT INTO students (first_name, last_name, date_of_birth) VALUES (:first_name, :last_name, :dob)"
+            )
+            session.execute(insert_query, {"first_name": first_name, "last_name": last_name, "dob": dob})
+            session.commit()
+            session.close()
+
+            # Show success message
+            messagebox.showinfo("Success", "Student added successfully!")
+        except Exception as e:
+            # Show error message if something goes wrong
+            messagebox.showerror("Database Error", f"An error occurred: {e}")
 
     def display_students(self):
         """
@@ -104,4 +120,10 @@ class StudentManagement:
 
         # Start the main loop
         self.root.mainloop()
+
+
+# Entry point for the application
+if __name__ == "__main__":
+    app = StudentManagement()
+    app.run()
 
